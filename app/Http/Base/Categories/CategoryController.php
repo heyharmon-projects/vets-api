@@ -3,13 +3,9 @@
 namespace DDD\Http\Base\Categories;
 
 use Illuminate\Http\Request;
-use DDD\App\Controllers\Controller;
-
-// Models
-use DDD\Domain\Base\Categories\Category;
-
-// Resources
 use DDD\Domain\Base\Categories\Resources\CategoryResource;
+use DDD\Domain\Base\Categories\Category;
+use DDD\App\Controllers\Controller;
 
 class CategoryController extends Controller
 {

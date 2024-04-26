@@ -2,23 +2,19 @@
 
 namespace DDD\Domain\Base\Invitations;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-// Enums
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use DDD\Domain\Base\Users\Enums\RoleEnum;
-
-// Traits
 use DDD\App\Traits\HasUuid;
-use DDD\App\Traits\BelongsToOrganization;
 use DDD\App\Traits\BelongsToUser;
+use DDD\App\Traits\BelongsToOrganization;
 
 class Invitation extends Model
 {
-    use HasFactory,
-        HasUuid,
-        BelongsToOrganization,
-        BelongsToUser;
+    use BelongsToOrganization,
+        BelongsToUser,
+        HasFactory,
+        HasUuid;
 
     /**
      * The attributes that are mass assignable.
@@ -44,6 +40,6 @@ class Invitation extends Model
      */
     public function url()
     {
-        return urldecode(env('APP_UI_URL') . '/' . $this->organization->slug . '/invitations/' . $this->uuid);
+        return urldecode(env('APP_UI_URL').'/'.$this->organization->slug.'/invitations/'.$this->uuid);
     }
 }

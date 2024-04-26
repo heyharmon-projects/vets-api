@@ -3,13 +3,9 @@
 namespace DDD\Http\Base\Tags;
 
 use Illuminate\Http\Request;
-use DDD\App\Controllers\Controller;
-
-// Models
 use DDD\Domain\Base\Tags\Tag;
-
-// Resources
 use DDD\Domain\Base\Tags\Resources\TagResource;
+use DDD\App\Controllers\Controller;
 
 class TagController extends Controller
 {

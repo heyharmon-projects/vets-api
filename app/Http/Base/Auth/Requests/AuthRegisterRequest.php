@@ -2,19 +2,18 @@
 
 namespace DDD\Http\Base\Auth\Requests;
 
+use Illuminate\Validation\Rules\Password;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
-use Illuminate\Validation\Rules\Password;
+use Exception;
 
 class AuthRegisterRequest extends FormRequest
 {
     /**
      * Get the validation rules that apply to the request.
-     *
-     * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             'name' => ['required', 'string', 'max:255'],
@@ -36,14 +35,12 @@ class AuthRegisterRequest extends FormRequest
 
     /**
      * Return exception as json
-     *
-     * @return Exception
      */
-    protected function failedValidation(Validator $validator)
+    protected function failedValidation(Validator $validator): Exception
     {
         throw new HttpResponseException(response()->json([
             'message' => 'The given data was invalid.',
-            'errors' => $validator->errors()
+            'errors' => $validator->errors(),
         ], 422));
     }
 }

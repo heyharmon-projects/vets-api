@@ -2,34 +2,27 @@
 
 namespace DDD\Domain\Base\Invitations\Requests;
 
+use Illuminate\Validation\Rules\Enum;
+use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
-
-// Rules
-use Illuminate\Validation\Rules\Enum;
-
-// Enums
+use Exception;
 use DDD\Domain\Base\Users\Enums\RoleEnum;
 
 class InvitationStoreRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
-     *
-     * @return bool
      */
-    public function authorize()
+    public function authorize(): bool
     {
         return true;
     }
 
     /**
      * Get the validation rules that apply to the request.
-     *
-     * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             'email' => 'required|email:rfc,strict|max:255|unique:invitations|unique:users',
@@ -39,10 +32,8 @@ class InvitationStoreRequest extends FormRequest
 
     /**
      * Get the error messages for the defined validation rules.
-     *
-     * @return array
      */
-    public function messages()
+    public function messages(): array
     {
         return [
             'email.unique' => 'That email is already in use.',
@@ -51,14 +42,12 @@ class InvitationStoreRequest extends FormRequest
 
     /**
      * Return exception as json
-     *
-     * @return Exception
      */
-    protected function failedValidation(Validator $validator)
+    protected function failedValidation(Validator $validator): Exception
     {
         throw new HttpResponseException(response()->json([
             'message' => 'The given data was invalid.',
-            'errors' => $validator->errors()
+            'errors' => $validator->errors(),
         ], 422));
     }
 }

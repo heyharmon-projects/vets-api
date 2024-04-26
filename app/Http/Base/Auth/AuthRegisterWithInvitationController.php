@@ -2,24 +2,17 @@
 
 namespace DDD\Http\Base\Auth;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-use DDD\App\Controllers\Controller;
-
-// Models
-use DDD\Domain\Base\Users\User;
-use DDD\Domain\Base\Invitations\Invitation;
-
-// Requests
+use Illuminate\Http\JsonResponse;
 use DDD\Http\Base\Auth\Requests\AuthRegisterWithInvitationRequest;
-
-// Resources
+use DDD\Domain\Base\Users\User;
 use DDD\Domain\Base\Organizations\Resources\OrganizationResource;
+use DDD\Domain\Base\Invitations\Invitation;
+use DDD\App\Controllers\Controller;
 
 class AuthRegisterWithInvitationController extends Controller
 {
-    public function __invoke(Invitation $invitation, AuthRegisterWithInvitationRequest $request)
+    public function __invoke(Invitation $invitation, AuthRegisterWithInvitationRequest $request): JsonResponse
     {
         $user = User::create([
             'name' => $request->name,
@@ -40,8 +33,8 @@ class AuthRegisterWithInvitationController extends Controller
                 'name' => $user->name,
                 'email' => $user->email,
                 'role' => $user->role,
-                'organization' => new OrganizationResource($user->organization)
-            ]
+                'organization' => new OrganizationResource($user->organization),
+            ],
         ], 200);
     }
 }

@@ -2,19 +2,11 @@
 
 namespace DDD\Http\Base\Subscriptions\Subscriptions;
 
-use Illuminate\Http\Request;
-use DDD\App\Controllers\Controller;
-
-// Domains
-use DDD\Domain\Base\Organizations\Organization;
-use DDD\Domain\Base\Subscriptions\Plans\Plan;
-
-// Requests
-use DDD\Domain\Base\Subscriptions\Subscriptions\Requests\SubscriptionStoreRequest;
 use DDD\Domain\Base\Subscriptions\Subscriptions\Requests\SubscriptionUpdateRequest;
-
-// Resources
-use DDD\Domain\Base\Organizations\Resources\OrganizationResource;
+use DDD\Domain\Base\Subscriptions\Subscriptions\Requests\SubscriptionStoreRequest;
+use DDD\Domain\Base\Subscriptions\Plans\Plan;
+use DDD\Domain\Base\Organizations\Organization;
+use DDD\App\Controllers\Controller;
 
 class SubscriptionController extends Controller
 {
@@ -38,7 +30,7 @@ class SubscriptionController extends Controller
     public function update(Organization $organization, SubscriptionUpdateRequest $request)
     {
         $plan = Plan::whereSlug($request->plan)->first();
-        
+
         if ($plan->buyable) {
             $organization->subscription('default')->swap($plan->stripe_price_id);
         } else {

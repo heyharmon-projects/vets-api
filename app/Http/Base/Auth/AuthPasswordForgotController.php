@@ -2,19 +2,17 @@
 
 namespace DDD\Http\Base\Auth;
 
-use Illuminate\Http\Request;
-use DDD\App\Controllers\Controller;
 use Illuminate\Support\Facades\Password;
-
-// Requests
+use Illuminate\Http\JsonResponse;
 use DDD\Http\Base\Auth\Requests\AuthPasswordForgotRequest;
+use DDD\App\Controllers\Controller;
 
 class AuthPasswordForgotController extends Controller
 {
-    public function __invoke(AuthPasswordForgotRequest $request)
+    public function __invoke(AuthPasswordForgotRequest $request): JsonResponse
     {
         Password::sendResetLink([
-            'email' => $request->email
+            'email' => $request->email,
         ]);
 
         return response()->json([

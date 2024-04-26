@@ -2,18 +2,16 @@
 
 namespace DDD\Domain\Base\Tags;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-
-// Traits
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use DDD\App\Traits\HasSlug;
 use DDD\App\Traits\HasParents;
 
 class Tag extends Model
 {
     use HasFactory,
-        HasSlug,
-        HasParents;
+        HasParents,
+        HasSlug;
 
     protected $guarded = [
         'id',

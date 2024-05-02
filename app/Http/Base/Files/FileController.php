@@ -10,6 +10,7 @@ use DDD\Domain\Base\Organizations\Organization;
 use DDD\Domain\Base\Files\Resources\FileResource;
 use DDD\Domain\Base\Files\Requests\StoreFileRequest;
 use DDD\Domain\Base\Files\File;
+use DDD\Domain\Base\Files\Actions\StoreFileAction;
 use DDD\App\Controllers\Controller;
 
 class FileController extends Controller
@@ -26,19 +27,8 @@ class FileController extends Controller
 
     public function store(Organization $organization, StoreFileRequest $request)
     {
-        // Store file in storage
-        $disk = config('filesystems.default');
-        $path = $request->file->store($organization->slug, $disk);
-
-        // Store file in database
-        $file = $organization->files()->create([
-            'path' => $path,
-            'name' => pathinfo($request->file->getClientOriginalName(), PATHINFO_FILENAME),
-            'filename' => basename($path),
-            'extension' => $request->file->extension(),
-            'mime' => $request->file->getMimeType(),
-            'disk' => $disk,
-        ]);
+        $file = StoreFileAction::run($organization, $request);
+        // $file = $action->handle($organization, $request);
 
         return new FileResource($file);
     }

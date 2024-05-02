@@ -29,7 +29,6 @@ class FileFactory extends Factory
             'filename' => 'the-seeded-file-name.png',
             'path' => 'https://placehold.co/450x350',
             'extension' => 'png',
-            'mime' => 'image/png',
             'disk' => 'r2',
         ];
     }

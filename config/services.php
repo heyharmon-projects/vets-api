@@ -37,4 +37,11 @@ return [
         'puppeteerActor' => env('APIFY_PUPPETEER_ACTOR'),
     ],
 
+    'thumbio' => [
+        'token' => env('THUMBIO_TOKEN'),
+    ],
+
+    'screenshotone' => [
+        'accesskey' => env('SCREENSHOTONE_ACCESSKEY'),
+    ],
 ];

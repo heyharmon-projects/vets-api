@@ -9,8 +9,11 @@ class FileResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return array|\Illuminate\Contracts\Support\Arrayable|\JsonSerializable
      */
-    public function toArray(Request $request): array
+    public function toArray(Request $request)
     {
         return [
             'id' => $this->id,
@@ -19,7 +22,6 @@ class FileResource extends JsonResource
             'path' => $this->path,
             'url' => $this->getStorageUrl(),
             'extension' => $this->extension,
-            'mime' => $this->mime,
         ];
     }
 }

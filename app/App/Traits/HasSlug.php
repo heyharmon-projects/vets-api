@@ -10,7 +10,7 @@ trait HasSlug
     protected static function bootHasSlug(): void
     {
         static::creating(function (Model $model) {
-            if (! $model->slug) {
+            if (!$model->slug) {
                 $slug = Str::slug($model->title);
                 $model->slug = $model->generateUniqueSlug($slug);
             }

@@ -2,6 +2,7 @@
 
 namespace DDD\Domain\Base\Files;
 
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use DDD\App\Traits\BelongsToUser;
@@ -12,6 +13,7 @@ class File extends Model
     use BelongsToOrganization,
         BelongsToUser,
         HasFactory;
+        // SoftDeletes;
 
     protected $guarded = ['id'];
 

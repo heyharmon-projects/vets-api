@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Console\Command;
 use DDD\Domain\Locations\Location;
+use DDD\Domain\Locations\Actions\TakeLocationScreenshotAction;
 
 class ImportFromYelp extends Command
 {
@@ -14,7 +15,7 @@ class ImportFromYelp extends Command
      *
      * @var string
      */
-    protected $signature = 'import:yelp';
+    protected $signature = 'locations:import-from-yelp';
 
     /**
      * The console command description.
@@ -40,8 +41,13 @@ class ImportFromYelp extends Command
         $locations = json_decode(File::get('storage/app/locations/yelp-utah-veterinarian_2023-12-13.json'), true);
         // $locations = json_decode(File::get('storage/app/locations/utah_dataset_yelp-scraper_2024-04-26_16-56-37-024.json'), true);
         
-        foreach ($locations as $location) {
-            Location::create([
+        foreach ($locations as $index => $location) {
+            // Only import 3 locations for now
+            if ($index > 2) {
+                break;
+            }
+            
+            $location = Location::create([
                 'organization_id' => 1,
                 'title' => $location['name'],
                 'phone' => $location['phone'],
@@ -55,6 +61,8 @@ class ImportFromYelp extends Command
                 'country' => $location['address']['country'],
                 'yelp_url' => $location['directUrl'],
             ]);
+
+            // TakeLocationScreenshotAction::run($location);
         }
 
         $this->info('Data imported successfully.');

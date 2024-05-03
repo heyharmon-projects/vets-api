@@ -26,18 +26,19 @@ class TakeLocationScreenshotAction
             $url = $this->screenshotter->take($location->website, '1200', '1200');
 
             $file = StoreFileFromUrlAction::run($location->organization, $url);
+
+            if ($location->screenshot()->exists()) {
+                $location->screenshot()->delete();
+            }      
+    
+            $location->update([
+                'screenshot_file_id' => $file->id,
+            ]);
+    
+            return new FileResource($file);
+            
         } catch (\Exception $e) {
             return $e->getMessage();
         }
-
-        if ($location->screenshot()->exists()) {
-            $location->screenshot->delete();
-        }      
-
-        $location->update([
-            'screenshot_file_id' => $file->id,
-        ]);
-
-        return new FileResource($file);
     }
 }

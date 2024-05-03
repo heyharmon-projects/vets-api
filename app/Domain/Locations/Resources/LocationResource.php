@@ -25,6 +25,9 @@ class LocationResource extends JsonResource
             'city' => $this->city,
             'state' => $this->state,
             'postal_code' => $this->postal_code,
+            'country' => $this->country,
+            'latitude' => $this->latitude,
+            'longitude' => $this->longitude,
             'yelp_url' => $this->yelp_url,
             'screenshot' => new FileResource($this->screenshot),
         ];

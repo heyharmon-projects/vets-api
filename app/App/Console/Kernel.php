@@ -5,8 +5,8 @@ namespace DDD\App\Console;
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Illuminate\Console\Scheduling\Schedule;
 use DDD\Domain\Locations\Commands\ImportFromYelp;
-use DDD\Domain\Locations\Commands\GetScreenshots;
-use DDD\Domain\Locations\Commands\GetCoordinates;
+use DDD\Domain\Locations\Commands\GetScreenshotsCommand;
+use DDD\Domain\Locations\Commands\GetCoordinatesCommand;
 
 class Kernel extends ConsoleKernel
 {
@@ -16,9 +16,9 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        GetCoordinates::class,
-        GetScreenshots::class,
         ImportFromYelp::class,
+        GetScreenshotsCommand::class,
+        GetCoordinatesCommand::class,
     ];
 
     /**

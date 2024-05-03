@@ -11,13 +11,13 @@ class GetCoordinatesAction
 
     function handle(Location $location)
     {
-        // if (!is_null($location->latitude) && !is_null($location->longitude)) {
-        //     return;
-        // }
+        if (!is_null($location->latitude) && !is_null($location->longitude)) {
+            return;
+        }
 
-        // if (is_null($location->address_line_1)) {
-        //     return;
-        // }
+        if (is_null($location->address_line_1)) {
+            return;
+        }
 
         try {
             $fullAddress = $location->address_line_1 . ', ' 
@@ -30,7 +30,7 @@ class GetCoordinatesAction
             $result = app('geocoder')->geocode($fullAddress)->get();
            
             if ($result->isNotEmpty()) {
-                $coordinates = $result[0]->getCoordinates();
+                $coordinates = $result[0]->GetCoordinatesCommand();
 
                 $location->latitude = $coordinates->getLatitude();
                 $location->longitude = $coordinates->getLongitude();
@@ -38,6 +38,7 @@ class GetCoordinatesAction
 
                 return $coordinates;
             }
+            
         } catch (\Exception $e) {
             return $e->getMessage();
         }

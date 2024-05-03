@@ -4,23 +4,23 @@ namespace DDD\Domain\Locations\Commands;
 
 use Illuminate\Console\Command;
 use DDD\Domain\Locations\Location;
-use DDD\Domain\Locations\Actions\GetCoordinatesAction;
+use DDD\Domain\Locations\Actions\GetScreenshotAction;
 
-class GetCoordinates extends Command
+class GetScreenshotsCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'locations:get-coordinates';
+    protected $signature = 'locations:get-screenshots';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Get lat/long coordinates for all locations with missing coordinates.';
+    protected $description = 'Take a screenshot for all locations with a missing screenshot.';
 
     /**
      * Execute the console command.
@@ -29,13 +29,12 @@ class GetCoordinates extends Command
      */
     public function handle()
     {
-        $locations = Location::whereNull('latitude')->get();
-         
+        $locations = Location::whereNull('screenshot_file_id')->get();
         
         foreach ($locations as $location) {
-            GetCoordinatesAction::dispatch($location);
+            GetScreenshotAction::dispatch($location);
         }
 
-        $this->info('Coordinates jobs dispatched.');
+        $this->info('Screenshot jobs dispatched.');
     }
 }

@@ -2,11 +2,9 @@
 
 namespace DDD\Domain\Locations\Commands;
 
-use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 use Illuminate\Console\Command;
 use DDD\Domain\Locations\Location;
-use DDD\Domain\Locations\Actions\TakeLocationScreenshotAction;
 
 class ImportFromYelp extends Command
 {
@@ -39,11 +37,10 @@ class ImportFromYelp extends Command
         // }
         
         $locations = json_decode(File::get('storage/app/locations/yelp-utah-veterinarian_2023-12-13.json'), true);
-        // $locations = json_decode(File::get('storage/app/locations/utah_dataset_yelp-scraper_2024-04-26_16-56-37-024.json'), true);
         
         foreach ($locations as $index => $location) {
             // Only import 3 locations for now
-            if ($index > 2) {
+            if ($index > 5) {
                 break;
             }
             
@@ -61,8 +58,6 @@ class ImportFromYelp extends Command
                 'country' => $location['address']['country'],
                 'yelp_url' => $location['directUrl'],
             ]);
-
-            // TakeLocationScreenshotAction::run($location);
         }
 
         $this->info('Data imported successfully.');

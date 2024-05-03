@@ -4,13 +4,13 @@ namespace DDD\Domain\Locations;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use DDD\Domain\Locations\Actions\TakeLocationScreenshotAction;
+use DDD\Domain\Locations\Actions\GetScreenshotAction;
+use DDD\Domain\Locations\Actions\GetCoordinatesAction;
 use DDD\Domain\Base\Files\File;
 use DDD\App\Traits\HasSlug;
 use DDD\App\Traits\BelongsToUser;
 use DDD\App\Traits\BelongsToOrganization;
 use DDD\App\Casts\DomainCast;
-use DDD\Domain\Locations\Actions\GetCoordinatesAction;
 
 class Location extends Model
 {
@@ -30,8 +30,8 @@ class Location extends Model
         parent::boot();
 
         self::created(function (Location $location) {
-            GetCoordinatesAction::dispatch($location);
-            TakeLocationScreenshotAction::dispatch($location);
+            GetScreenshotAction::run($location);
+            GetCoordinatesAction::run($location);
         });
     }
 

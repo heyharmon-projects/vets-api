@@ -8,7 +8,7 @@ use DDD\Domain\Base\Files\Resources\FileResource;
 use DDD\Domain\Base\Files\Actions\StoreFileFromUrlAction;
 use DDD\App\Services\Screenshot\ScreenshotInterface;
 
-class TakeLocationScreenshotAction
+class GetScreenshotAction
 {
     use AsAction;
 
@@ -29,7 +29,7 @@ class TakeLocationScreenshotAction
 
             if ($location->screenshot()->exists()) {
                 $location->screenshot()->delete();
-            }      
+            }
     
             $location->update([
                 'screenshot_file_id' => $file->id,

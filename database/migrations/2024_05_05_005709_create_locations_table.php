@@ -19,8 +19,10 @@ return new class extends Migration
             $table->string('title');
             $table->string('slug')->nullable();
             $table->string('phone')->nullable();
+            $table->string('phone_owner')->nullable();
             $table->string('website')->nullable();
             $table->foreignId('screenshot_file_id')->nullable();
+            $table->foreignId('favicon_file_id')->nullable();
             $table->text('description')->nullable();
             $table->string('primary_image_url')->nullable();
             $table->string('address_line_1')->nullable();
@@ -31,13 +33,9 @@ return new class extends Migration
             $table->string('country')->nullable();
             $table->decimal('latitude', 11, 8)->nullable();
             $table->decimal('longitude', 11, 8)->nullable();
+            $table->string('employees')->nullable();
             $table->string('yelp_url')->nullable();
-            
             $table->timestamps();
-
-            // Foreign constraints
-            $table->foreign('organization_id')->references('id')->on('organizations');
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

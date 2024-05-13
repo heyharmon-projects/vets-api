@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('files', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('organization_id');
+            $table->foreignId('organization_id')->nullable();
             $table->foreignId('user_id')->nullable();
             $table->string('name');
+            $table->string('folder')->nullable();
             $table->string('filename');
             $table->string('path');
             $table->string('extension');

@@ -3,24 +3,30 @@
 namespace DDD\Domain\Base\Files\Actions;
 
 use Lorisleiva\Actions\Concerns\AsAction;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Http\Request;
 use DDD\Domain\Base\Organizations\Organization;
 use DDD\Domain\Base\Files\File;
 
-class StoreFileAction
+class UpdateFileAction
 {
     use AsAction;
     
-    function handle(Request $request)
+    function handle(File $file, Request $request)
     {
         $disk = config('filesystems.default');
         
-        $path = $request->file->store($request->folder, $disk);
+        // Store new file in storage
+        $newPath = $request->file->store($file->folder, $disk);
 
-        $file = File::create([
-            'path' => $path,
+        // Remove old file storage
+        Storage::disk($disk)->delete($file->path);
+        
+        // Update file
+        $file->update([
+            'path' => $newPath,
             'name' => pathinfo($request->file->getClientOriginalName(), PATHINFO_FILENAME),
-            'filename' => basename($path),
+            'filename' => basename($newPath),
             'extension' => $request->file->getClientOriginalExtension(),
             'disk' => $disk,
         ]);

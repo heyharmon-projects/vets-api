@@ -11,13 +11,14 @@ class LocationResource extends JsonResource
     /**
      * Transform the resource into an array.
      */
-    public function toArray(Request $request): array
+    public function toArray(Request $request)
     {
         return [
             'id' => $this->id,
             'title' => $this->title,
             'slug' => $this->slug,
             'phone' => $this->phone,
+            'phone_owner' => $this->phone_owner,
             'website' => $this->website,
             'description' => $this->description,
             'address_line_1' => $this->address_line_1,
@@ -28,8 +29,10 @@ class LocationResource extends JsonResource
             'country' => $this->country,
             'latitude' => $this->latitude,
             'longitude' => $this->longitude,
+            'employees' => $this->employees,
             'yelp_url' => $this->yelp_url,
             'screenshot' => new FileResource($this->screenshot),
+            'favicon' => new FileResource($this->favicon),
         ];
     }
 }

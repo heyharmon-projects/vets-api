@@ -21,5 +21,10 @@ class DatabaseSeeder extends Seeder
                 LocalUsersSeeder::class,
             ]);
         }
+
+        $this->call([
+            LocationsSeeder::class,
+            FilesSeeder::class,
+        ]);
     }
 }

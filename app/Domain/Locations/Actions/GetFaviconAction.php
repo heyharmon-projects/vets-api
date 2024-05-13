@@ -6,14 +6,14 @@ use Lorisleiva\Actions\Concerns\AsAction;
 use DDD\Domain\Locations\Location;
 use DDD\Domain\Base\Files\Resources\FileResource;
 use DDD\Domain\Base\Files\Actions\StoreFileFromUrlAction;
-use DDD\App\Services\Screenshot\ScreenshotInterface;
+use DDD\App\Services\Favicon\FaviconInterface;
 
-class GetScreenshotAction
+class GetFaviconAction
 {
     use AsAction;
 
     public function __construct(
-        protected ScreenshotInterface $screenshotter,
+        protected FaviconInterface $favicon,
     ) {}
 
     function handle(Location $location)
@@ -23,15 +23,15 @@ class GetScreenshotAction
         }
 
         try {
-            $url = $this->screenshotter->take($location->website, '1200', '1200');
+            $url = $this->favicon->take($location->website, 'small');
 
-            $file = StoreFileFromUrlAction::run('screenshots', $url);
+            $file = StoreFileFromUrlAction::run('favicons', $url);
 
-            if ($location->screenshot()->exists()) {
-                $location->screenshot()->delete();
+            if ($location->favicon()->exists()) {
+                $location->favicon()->delete();
             }
     
-            $location->screenshot_file_id = $file->id;
+            $location->favicon_file_id = $file->id;
 
             $location->save();
     

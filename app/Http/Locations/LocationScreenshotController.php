@@ -12,4 +12,9 @@ class LocationScreenshotController extends Controller
     {
         return GetScreenshotAction::run($location);
     }
+
+    public function update(Location $location)
+    {
+        return GetScreenshotAction::run($location);
+    }
 }

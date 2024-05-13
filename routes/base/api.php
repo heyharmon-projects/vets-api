@@ -8,7 +8,7 @@ use DDD\Http\Base\Auth\AuthPasswordResetController;
 use DDD\Http\Base\Auth\AuthRegisterController;
 use DDD\Http\Base\Auth\AuthRegisterWithInvitationController;
 use DDD\Http\Base\Categories\CategoryController;
-use DDD\Http\Base\Files\FileController;
+// use DDD\Http\Base\Files\FileController;
 use DDD\Http\Base\Files\FileDownloadController;
 use DDD\Http\Base\Invitations\InvitationController;
 use DDD\Http\Base\Organizations\OrganizationController;
@@ -58,12 +58,12 @@ Route::middleware('auth:sanctum')->group(function () {
         });
 
         // Files
-        Route::prefix('files')->group(function () {
-            Route::get('/files', [FileController::class, 'index']);
-            Route::post('/', [FileController::class, 'store']);
-            Route::get('/files/{file}', [FileController::class, 'show']);
-            Route::delete('/{file}', [FileController::class, 'destroy']);
-        });
+        // Route::prefix('files')->group(function () {
+        //     Route::get('/files', [FileController::class, 'index']);
+        //     Route::post('/', [FileController::class, 'store']);
+        //     Route::get('/files/{file}', [FileController::class, 'show']);
+        //     Route::delete('/{file}', [FileController::class, 'destroy']);
+        // });
 
         // Teams
         Route::prefix('teams')->group(function () {

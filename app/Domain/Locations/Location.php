@@ -5,18 +5,18 @@ namespace DDD\Domain\Locations;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use DDD\Domain\Locations\Actions\GetScreenshotAction;
+use DDD\Domain\Locations\Actions\GetFaviconAction;
 use DDD\Domain\Locations\Actions\GetCoordinatesAction;
+use DDD\Domain\Contacts\Contact;
 use DDD\Domain\Base\Files\File;
 use DDD\App\Traits\HasSlug;
 use DDD\App\Traits\BelongsToUser;
-use DDD\App\Traits\BelongsToOrganization;
 use DDD\App\Casts\DomainCast;
 
 class Location extends Model
 {
     use HasFactory,
         HasSlug,
-        BelongsToOrganization,
         BelongsToUser;
 
     protected $guarded = ['id', 'slug'];
@@ -30,13 +30,34 @@ class Location extends Model
         parent::boot();
 
         self::created(function (Location $location) {
-            GetScreenshotAction::run($location);
-            GetCoordinatesAction::run($location);
+            GetScreenshotAction::dispatch($location);
+            GetFaviconAction::dispatch($location);
+            GetCoordinatesAction::dispatch($location);
+        });
+
+        self::deleted(function (Location $location) {
+            if ($location->screenshot) {
+                $location->screenshot->delete();
+            }
+
+            if ($location->favicon) {
+                $location->favicon->delete();
+            }
         });
     }
 
     public function screenshot()
     {
         return $this->belongsTo(File::class, 'screenshot_file_id');
+    }
+
+    public function favicon()
+    {
+        return $this->belongsTo(File::class, 'favicon_file_id');
+    }
+
+    public function contacts()
+    {
+        return $this->hasMany(Contact::class);
     }
 }

@@ -30,7 +30,7 @@ class GetCoordinatesAction
             $result = app('geocoder')->geocode($fullAddress)->get();
            
             if ($result->isNotEmpty()) {
-                $coordinates = $result[0]->GetCoordinatesCommand();
+                $coordinates = $result[0]->getCoordinates();
 
                 $location->latitude = $coordinates->getLatitude();
                 $location->longitude = $coordinates->getLongitude();
@@ -38,7 +38,6 @@ class GetCoordinatesAction
 
                 return $coordinates;
             }
-            
         } catch (\Exception $e) {
             return $e->getMessage();
         }

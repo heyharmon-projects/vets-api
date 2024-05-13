@@ -29,23 +29,15 @@ class ImportFromYelp extends Command
      */
     public function handle()
     {
-        // $jsonFilePath = $this->argument('file');
-
-        // if (!File::exists($jsonFilePath)) {
-        //     $this->error('JSON file not found.');
-        //     return;
-        // }
-        
-        $locations = json_decode(File::get('storage/app/locations/yelp-utah-veterinarian_2023-12-13.json'), true);
+        $locations = json_decode(File::get('storage/app/locations/utah-yelp_2023-12-13.json'), true);
         
         foreach ($locations as $index => $location) {
-            // Only import 3 locations for now
-            if ($index > 5) {
-                break;
-            }
+            // Only import 6 locations for now
+            // if ($index > 5) {
+            //     break;
+            // }
             
             $location = Location::create([
-                'organization_id' => 1,
                 'title' => $location['name'],
                 'phone' => $location['phone'],
                 'website' => $location['website'],

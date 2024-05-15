@@ -15,15 +15,16 @@ use DDD\Http\Base\Files\FileController;
 
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('locations', LocationController::class);
+    Route::apiResource('contacts', ContactController::class);
     // Route::apiResource('files', FileController::class);
 
-    Route::prefix('locations/{location}')->group(function () {
-        Route::get('/contacts', [ContactController::class, 'index']);
-        Route::post('/contacts', [ContactController::class, 'store']);
-        Route::post('contacts/{contact}', [ContactController::class, 'update']);
-        Route::get('contacts/{contact}', [ContactController::class, 'show']);
-        Route::delete('contacts/{contact}', [ContactController::class, 'destroy']);
-    });
+    // Route::prefix('contacts')->group(function () {
+    //     Route::get('/', [ContactController::class, 'index']);
+    //     Route::post('/', [ContactController::class, 'store']);
+    //     Route::post('/{contact}', [ContactController::class, 'update']);
+    //     Route::get('/{contact}', [ContactController::class, 'show']);
+    //     Route::delete('/{contact}', [ContactController::class, 'destroy']);
+    // });
 
     Route::prefix('files')->group(function () {
         Route::get('/', [FileController::class, 'index']);

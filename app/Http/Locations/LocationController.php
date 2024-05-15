@@ -42,9 +42,8 @@ class LocationController extends Controller
 
     public function show(Location $location)
     {
-        // $favicon = GetFaviconAction::run($location);
-        // return $favicon;
-
+        $location = $location->load('contacts');
+        
         return new LocationResource($location);
     }
 

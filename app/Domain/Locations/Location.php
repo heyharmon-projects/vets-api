@@ -36,13 +36,9 @@ class Location extends Model
         });
 
         self::deleted(function (Location $location) {
-            if ($location->screenshot) {
-                $location->screenshot->delete();
-            }
-
-            if ($location->favicon) {
-                $location->favicon->delete();
-            }
+            $location->screenshot()->delete();
+            $location->favicon()->delete();
+            $location->contacts()->delete();
         });
     }
 

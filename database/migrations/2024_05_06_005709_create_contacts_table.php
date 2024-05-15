@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable();
-            $table->foreignId('location_id');
+            $table->foreignId('location_id')->nullable();
             $table->string('name');
             $table->string('title');
             $table->string('phone')->nullable();

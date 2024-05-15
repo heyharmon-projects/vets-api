@@ -5,6 +5,7 @@ namespace DDD\Domain\Locations\Resources;
 use Illuminate\Http\Resources\Json\JsonResource;
 use Illuminate\Http\Request;
 use DDD\Domain\Base\Files\Resources\FileResource;
+use DDD\Domain\Contacts\Resources\ContactResource;
 
 class LocationResource extends JsonResource
 {
@@ -33,6 +34,7 @@ class LocationResource extends JsonResource
             'yelp_url' => $this->yelp_url,
             'screenshot' => new FileResource($this->screenshot),
             'favicon' => new FileResource($this->favicon),
+            'contacts' => ContactResource::collection($this->whenLoaded('contacts')),
         ];
     }
 }

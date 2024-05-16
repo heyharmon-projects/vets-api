@@ -5,5 +5,3 @@ id,user_id,location_id,name,title,phone,email,linkedin_url,created_at,updated_at
 4,1,15,Dale Smith,"Owner, Veterinarian",,,https://www.linkedin.com/in/dale-smith-934074101/,2024-05-14 22:16:30,2024-05-14 22:16:30
 5,1,47,Michael S. Blotter,"Owner, Veterinarian",,,https://www.linkedin.com/in/michael-blotter-56ab7229/,2024-05-14 22:24:23,2024-05-14 22:24:23
 6,1,171,Haleigh Lundgreen,"Owner, Veterinarian",,,https://www.linkedin.com/in/haleigh/,2024-05-14 22:28:13,2024-05-14 22:28:13
-7,1,46,Clyde J. Daines,"Owner, Veterinarian",(385) 400-4740,,,2024-05-15 04:57:43,2024-05-15 04:57:43
-8,1,13,Britt J. Hosken,"Owner, Veterinarian",,,,2024-05-15 04:59:33,2024-05-15 04:59:33

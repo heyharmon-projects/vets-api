@@ -25,7 +25,7 @@ class GetFaviconAction
         try {
             $url = $this->favicon->take($location->website, 'small');
 
-            $file = StoreFileFromUrlAction::run('favicons', $url);
+            $file = StoreFileFromUrlAction::run($url, 'favicons');
 
             if ($location->favicon()->exists()) {
                 $location->favicon()->delete();

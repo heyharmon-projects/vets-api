@@ -9,6 +9,8 @@ use DDD\Domain\Locations\Actions\GetFaviconAction;
 use DDD\Domain\Locations\Actions\GetCoordinatesAction;
 use DDD\Domain\Contacts\Contact;
 use DDD\Domain\Base\Files\File;
+use DDD\Domain\Base\Files\Actions\UpdateFileAction;
+use DDD\Domain\Base\Files\Actions\StoreFileAction;
 use DDD\App\Traits\HasSlug;
 use DDD\App\Traits\BelongsToUser;
 use DDD\App\Casts\DomainCast;
@@ -40,6 +42,17 @@ class Location extends Model
             $location->favicon()->delete();
             $location->contacts()->delete();
         });
+
+        // self::updated(function (Location $location) {
+        //     if (request()->screenshot) {
+        //         if ($location->screenshot) {
+        //             UpdateFileAction::run($location->screenshot, request()->file);
+        //         } else {
+        //             $file = StoreFileAction::run(request()->file, 'screenshots');
+        //             $location->update(['screenshot_file_id' => $file->id]);
+        //         }
+        //     }
+        // });
     }
 
     public function screenshot()

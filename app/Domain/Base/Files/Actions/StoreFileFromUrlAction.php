@@ -12,7 +12,7 @@ class StoreFileFromUrlAction
 {
     use AsAction;
     
-    function handle(String $folder, String $url, String $extension = 'png')
+    function handle(String $url, String $folder, String $extension = 'png')
     {
         $disk = config('filesystems.default');
         

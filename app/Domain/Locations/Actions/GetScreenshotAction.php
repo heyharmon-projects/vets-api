@@ -25,7 +25,7 @@ class GetScreenshotAction
         try {
             $url = $this->screenshotter->take($location->website, '1200', '1200');
 
-            $file = StoreFileFromUrlAction::run('screenshots', $url);
+            $file = StoreFileFromUrlAction::run($url, 'screenshots');
 
             if ($location->screenshot()->exists()) {
                 $location->screenshot()->delete();

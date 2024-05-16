@@ -28,7 +28,7 @@ class FileController extends Controller
 
     public function store(StoreFileRequest $request)
     {
-        $file = StoreFileAction::run($request);
+        $file = StoreFileAction::run($request->file, $request->folder);
 
         return new FileResource($file);
     }
@@ -40,7 +40,7 @@ class FileController extends Controller
 
     public function update(File $file, UpdateFileRequest $request)
     {
-        UpdateFileAction::run($file, $request);
+        UpdateFileAction::run($file, $request->file);
 
         return new FileResource($file);
     }

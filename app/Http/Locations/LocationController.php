@@ -40,6 +40,13 @@ class LocationController extends Controller
         return new LocationResource($location);
     }
 
+    public function update(Location $location, Request $request)
+    {
+        $location->update($request->all());
+
+        return new LocationResource($location);
+    }
+
     public function show(Location $location)
     {
         $location = $location->load('contacts');

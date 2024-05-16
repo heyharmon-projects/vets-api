@@ -3,28 +3,26 @@
 namespace DDD\Domain\Base\Files\Actions;
 
 use Lorisleiva\Actions\Concerns\AsAction;
-use Illuminate\Http\Request;
-use DDD\Domain\Base\Organizations\Organization;
 use DDD\Domain\Base\Files\File;
 
 class StoreFileAction
 {
     use AsAction;
     
-    function handle(Request $request)
+    function handle($file, String $folder)
     {
         $disk = config('filesystems.default');
         
-        $path = $request->file->store($request->folder, $disk);
+        $path = $file->store($folder, $disk);
 
-        $file = File::create([
+        $newFile = File::create([
             'path' => $path,
-            'name' => pathinfo($request->file->getClientOriginalName(), PATHINFO_FILENAME),
+            'name' => pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME),
             'filename' => basename($path),
-            'extension' => $request->file->getClientOriginalExtension(),
+            'extension' => $file->getClientOriginalExtension(),
             'disk' => $disk,
         ]);
 
-        return $file;
+        return $newFile;
     }
 }

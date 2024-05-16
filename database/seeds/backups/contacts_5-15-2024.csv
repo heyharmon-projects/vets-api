@@ -1,0 +1,7 @@
+id,user_id,location_id,name,title,phone,email,linkedin_url,created_at,updated_at
+1,1,20,Drew Allen,Owner,,,,2024-05-14 22:02:53,2024-05-14 22:02:53
+2,1,36,Eric Belnap,"Owner, Veterinarian",,,https://www.linkedin.com/in/eric-belnap-66927b5a/,2024-05-14 22:11:34,2024-05-14 22:11:34
+3,1,121,Dale Smith,"Owner, Veterinarian",,,https://www.linkedin.com/in/dale-smith-934074101/,2024-05-14 22:15:52,2024-05-14 22:15:52
+4,1,15,Dale Smith,"Owner, Veterinarian",,,https://www.linkedin.com/in/dale-smith-934074101/,2024-05-14 22:16:30,2024-05-14 22:16:30
+5,1,47,Michael S. Blotter,"Owner, Veterinarian",,,https://www.linkedin.com/in/michael-blotter-56ab7229/,2024-05-14 22:24:23,2024-05-14 22:24:23
+6,1,171,Haleigh Lundgreen,"Owner, Veterinarian",,,https://www.linkedin.com/in/haleigh/,2024-05-14 22:28:13,2024-05-14 22:28:13

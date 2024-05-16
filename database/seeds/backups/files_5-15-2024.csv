@@ -4,6 +4,7 @@ id,organization_id,user_id,name,folder,filename,path,extension,disk,created_at,u
 3,,,no-website,screenshots,Lhdu7lZamhb7P1LEt3yreSXlrVHcYJSIKCO9317U.png,screenshots/Lhdu7lZamhb7P1LEt3yreSXlrVHcYJSIKCO9317U.png,png,r2,2024-05-03 21:39:26,2024-05-11 20:04:32
 4,,,www.tcvh.com,screenshots,www.tcvh.com,screenshots/www.tcvh.com,png,r2,2024-05-03 21:39:28,2024-05-03 21:39:28
 5,,,www.nvetcare.com,screenshots,www.nvetcare.com,screenshots/www.nvetcare.com,png,r2,2024-05-03 21:39:30,2024-05-03 21:39:30
+6,,,Home-Lap-of-Love,screenshots,xeqegsvaBAsCGRi3gboEVMQTjjZ4gS7z4tqRPQ1O.png,screenshots/xeqegsvaBAsCGRi3gboEVMQTjjZ4gS7z4tqRPQ1O.png,png,r2,2024-05-03 21:39:32,2024-05-14 23:00:29
 7,,,www.majorstreetpetservices.com,screenshots,www.majorstreetpetservices.com,screenshots/www.majorstreetpetservices.com,png,r2,2024-05-03 21:39:34,2024-05-03 21:39:34
 8,,,Homepage-University-Veterinary-Hospital-Diagnostic-Center,screenshots,bWnpSiofBPMhPsjLjLNU0NbphpsCiXkLFzJ1rXL6.png,screenshots/bWnpSiofBPMhPsjLjLNU0NbphpsCiXkLFzJ1rXL6.png,png,r2,2024-05-03 21:39:36,2024-05-15 04:24:38
 9,,,www.holladayveterinaryhospital.com,screenshots,www.holladayveterinaryhospital.com,screenshots/www.holladayveterinaryhospital.com,png,r2,2024-05-03 21:39:38,2024-05-03 21:39:38
@@ -106,6 +107,7 @@ id,organization_id,user_id,name,folder,filename,path,extension,disk,created_at,u
 124,,,www.thetravelvet.com,,www.thetravelvet.com,favicons/www.thetravelvet.com,png,r2,2024-05-10 23:00:24,2024-05-10 23:00:24
 125,,,www.tcvh.com,,www.tcvh.com,favicons/www.tcvh.com,png,r2,2024-05-10 23:00:25,2024-05-10 23:00:25
 126,,,www.nvetcare.com,,www.nvetcare.com,favicons/www.nvetcare.com,png,r2,2024-05-10 23:00:27,2024-05-10 23:00:27
+127,,,www.lapoflove.com,,www.lapoflove.com,favicons/www.lapoflove.com,png,r2,2024-05-10 23:00:33,2024-05-10 23:00:33
 128,,,www.majorstreetpetservices.com,,www.majorstreetpetservices.com,favicons/www.majorstreetpetservices.com,png,r2,2024-05-10 23:00:36,2024-05-10 23:00:36
 129,,,www.uvhdc.com,,www.uvhdc.com,favicons/www.uvhdc.com,png,r2,2024-05-10 23:00:39,2024-05-10 23:00:39
 130,,,www.holladayveterinaryhospital.com,,www.holladayveterinaryhospital.com,favicons/www.holladayveterinaryhospital.com,png,r2,2024-05-10 23:00:42,2024-05-10 23:00:42
@@ -204,12 +206,3 @@ id,organization_id,user_id,name,folder,filename,path,extension,disk,created_at,u
 240,,,www.oquirrhhillsvet.com,,www.oquirrhhillsvet.com,favicons/www.oquirrhhillsvet.com,png,r2,2024-05-10 23:07:14,2024-05-10 23:07:14
 242,,,www.banfield.com,,www.banfield.com,favicons/www.banfield.com,png,r2,2024-05-10 23:07:19,2024-05-10 23:07:19
 243,,,granitevetspecialists.com,,granitevetspecialists.com,favicons/granitevetspecialists.com,png,r2,2024-05-10 23:07:22,2024-05-10 23:07:22
-244,,1,Home-Riverton-Veterinary-Clinic (2),,Ns2i0PQIFK1C2K5lk3HtGAwKaFJzXV71kX4WHNF0.png,Ns2i0PQIFK1C2K5lk3HtGAwKaFJzXV71kX4WHNF0.png,png,r2,2024-05-16 16:56:35,2024-05-16 17:00:23
-245,,1,Murray-Animal-Hospital-in-Murray-Utah,,bV5nCIMI6sNkRSjlGGfbumCpdkcX0LcK6acZ7xLM.png,screenshots/bV5nCIMI6sNkRSjlGGfbumCpdkcX0LcK6acZ7xLM.png,png,r2,2024-05-16 17:01:49,2024-05-16 17:01:49
-246,,1,no-website,,3Yo5pYqeOs5lFsfye4BsMj6FVKIFdBPS7SwtKLSF.png,screenshots/3Yo5pYqeOs5lFsfye4BsMj6FVKIFdBPS7SwtKLSF.png,png,r2,2024-05-16 17:03:16,2024-05-16 17:03:16
-247,,1,Brookside-Animal-Clinic,,dUWGYDuicfxAFAn7b42jTPyEkVThGQgJnQPgHLeH.png,screenshots/dUWGYDuicfxAFAn7b42jTPyEkVThGQgJnQPgHLeH.png,png,r2,2024-05-16 17:04:19,2024-05-16 17:04:19
-248,,1,Osguthorpe-Animal-Hospital,,kkNHCGAx86GRKfsHDbCuYG2TMtc1VeBvxFlKMemQ.png,screenshots/kkNHCGAx86GRKfsHDbCuYG2TMtc1VeBvxFlKMemQ.png,png,r2,2024-05-16 17:07:24,2024-05-16 17:07:24
-249,,1,Home-Veterinary-Orthopedic-Services,,fv2UvbzgXbRWQFrv9cVQ2ySpWp5W9wO4KV90ktvU.png,screenshots/fv2UvbzgXbRWQFrv9cVQ2ySpWp5W9wO4KV90ktvU.png,png,r2,2024-05-16 17:23:17,2024-05-16 17:23:17
-250,,1,Equine-Veterinarian-in-Bluffdale-UT-Mountain-Point-Equine-Hospital,,e4pA3KQ7QnCz494ned1b7AjtliSWAfYKH8G98o0H.png,screenshots/e4pA3KQ7QnCz494ned1b7AjtliSWAfYKH8G98o0H.png,png,r2,2024-05-16 17:35:29,2024-05-16 17:35:29
-251,,1,no-website,,gd7SGUInSpsG5SFW8E92AOFsc114q6QC1LznupkA.png,screenshots/gd7SGUInSpsG5SFW8E92AOFsc114q6QC1LznupkA.png,png,r2,2024-05-16 17:40:09,2024-05-16 17:40:09
-252,,1,South-Valley-Equine-–-From-pasture-to-performance-our-expertise-touches-all-aspects-of-equine-health-wellness-and-reproduction-,,641SBy8oNMQGSKYOuZxgxSSLNJtz7ahv8xDETWUh.png,screenshots/641SBy8oNMQGSKYOuZxgxSSLNJtz7ahv8xDETWUh.png,png,r2,2024-05-16 17:44:11,2024-05-16 17:44:11

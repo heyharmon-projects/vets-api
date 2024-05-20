@@ -4,23 +4,23 @@ namespace DDD\Domain\Locations\Commands;
 
 use Illuminate\Console\Command;
 use DDD\Domain\Locations\Location;
-use DDD\Domain\Locations\Actions\GetFaviconAction;
+use DDD\Domain\Locations\Actions\GetScreenshotAction;
 
-class GetFaviconsCommand extends Command
+class LocationGetScreenshotsCommand extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'locations:get-favicons';
+    protected $signature = 'locations:get-screenshots';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Get a favicon for all locations with a missing favicon.';
+    protected $description = 'Take a screenshot for all locations with a missing screenshot.';
 
     /**
      * Execute the console command.
@@ -29,12 +29,12 @@ class GetFaviconsCommand extends Command
      */
     public function handle()
     {
-        $locations = Location::whereNull('favicon_file_id')->get();
+        $locations = Location::whereNull('screenshot_file_id')->get();
         
         foreach ($locations as $location) {
-            GetFaviconAction::dispatch($location);
+            GetScreenshotAction::dispatch($location);
         }
 
-        $this->info('Favicon jobs dispatched.');
+        $this->info('Screenshot jobs dispatched.');
     }
 }

@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\File;
 use Illuminate\Console\Command;
 use DDD\Domain\Locations\Location;
 
-class ImportFromYelp extends Command
+class LocationImportFromYelp extends Command
 {
     /**
      * The name and signature of the console command.

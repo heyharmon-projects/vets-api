@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->nullable();
+            $table->boolean('favorite')->default(false);
             $table->string('title');
             $table->string('slug')->nullable();
             $table->string('phone')->nullable();
@@ -35,6 +36,7 @@ return new class extends Migration
             $table->decimal('longitude', 11, 8)->nullable();
             $table->string('employees')->nullable();
             $table->string('yelp_url')->nullable();
+            $table->string('linkedin_url')->nullable();
             $table->timestamps();
         });
     }

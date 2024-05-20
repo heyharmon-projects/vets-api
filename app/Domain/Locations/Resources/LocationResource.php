@@ -12,7 +12,7 @@ class LocationResource extends JsonResource
     /**
      * Transform the resource into an array.
      */
-    public function toArray(Request $request)
+    public function toArray($request)
     {
         return [
             'id' => $this->id,
@@ -35,6 +35,7 @@ class LocationResource extends JsonResource
             'screenshot' => new FileResource($this->screenshot),
             'favicon' => new FileResource($this->favicon),
             'contacts' => ContactResource::collection($this->whenLoaded('contacts')),
+            'favorite' => $this->favorite,
         ];
     }
 }

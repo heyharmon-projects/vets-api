@@ -4,11 +4,14 @@ namespace DDD\App\Console;
 
 use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
 use Illuminate\Console\Scheduling\Schedule;
-use DDD\Domain\Locations\Commands\ImportFromYelp;
-use DDD\Domain\Locations\Commands\GetScreenshotsCommand;
-use DDD\Domain\Locations\Commands\GetFaviconsCommand;
-use DDD\Domain\Locations\Commands\GetCoordinatesCommand;
-use DDD\Domain\Locations\Commands\EnrichFromUtahDWS;
+use DDD\Domain\Locations\Commands\LocationLinkedInUrl;
+use DDD\Domain\Locations\Commands\LocationImportFromYelp;
+use DDD\Domain\Locations\Commands\LocationGetScreenshotsCommand;
+use DDD\Domain\Locations\Commands\LocationGetFaviconsCommand;
+use DDD\Domain\Locations\Commands\LocationGetCoordinatesCommand;
+use DDD\Domain\Locations\Commands\LocationEnrichFromUtahDWS;
+use DDD\Domain\Contacts\Commands\ContactLinkedInEmployees;
+use DDD\Domain\Contacts\Commands\ContactLinkedIn;
 
 class Kernel extends ConsoleKernel
 {
@@ -18,11 +21,17 @@ class Kernel extends ConsoleKernel
      * @var array
      */
     protected $commands = [
-        EnrichFromUtahDWS::class,
-        ImportFromYelp::class,
-        GetFaviconsCommand::class,
-        GetScreenshotsCommand::class,
-        GetCoordinatesCommand::class,
+        // Locations
+        LocationEnrichFromUtahDWS::class,
+        LocationImportFromYelp::class,
+        LocationGetFaviconsCommand::class,
+        LocationGetScreenshotsCommand::class,
+        LocationGetCoordinatesCommand::class,
+        LocationLinkedInUrl::class,
+
+        // Contacts
+        ContactLinkedIn::class,
+        ContactLinkedInEmployees::class,
     ];
 
     /**

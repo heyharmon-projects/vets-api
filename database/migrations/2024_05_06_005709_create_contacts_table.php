@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreignId('location_id')->nullable();
             $table->string('name');
             $table->string('title');
+            $table->string('years')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->nullable();
             $table->string('linkedin_url')->nullable();

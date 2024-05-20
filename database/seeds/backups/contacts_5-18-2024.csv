@@ -1,10 +1,10 @@
 id,user_id,location_id,name,title,years,phone,email,linkedin_url,created_at,updated_at
 1,1,20,Drew Allen,Owner,,,,,2024-05-14 22:02:53,2024-05-14 22:02:53
-2,1,36,Eric Belnap,Owner,,,,https://linkedin.com/in/eric-belnap-66927b5a,2024-05-14 22:11:34,2024-05-14 22:11:34
-3,1,121,Dale Smith,Owner,,,,https://linkedin.com/in/dale-smith-934074101,2024-05-14 22:15:52,2024-05-14 22:15:52
-4,1,15,Dale Smith,Owner,,,,https://linkedin.com/in/dale-smith-934074101,2024-05-14 22:16:30,2024-05-14 22:16:30
-5,1,47,Michael S. Blotter,Owner,,,,https://linkedin.com/in/michael-blotter-56ab7229,2024-05-14 22:24:23,2024-05-14 22:24:23
-6,1,171,Haleigh Lundgreen,Owner,,,,https://linkedin.com/in/haleigh,2024-05-14 22:28:13,2024-05-14 22:28:13
+2,1,36,Eric Belnap,Owner,,,,https://www.linkedin.com/in/eric-belnap-66927b5a/,2024-05-14 22:11:34,2024-05-14 22:11:34
+3,1,121,Dale Smith,Owner,,,,https://www.linkedin.com/in/dale-smith-934074101/,2024-05-14 22:15:52,2024-05-14 22:15:52
+4,1,15,Dale Smith,Owner,,,,https://www.linkedin.com/in/dale-smith-934074101/,2024-05-14 22:16:30,2024-05-14 22:16:30
+5,1,47,Michael S. Blotter,Owner,,,,https://www.linkedin.com/in/michael-blotter-56ab7229/,2024-05-14 22:24:23,2024-05-14 22:24:23
+6,1,171,Haleigh Lundgreen,Owner,,,,https://www.linkedin.com/in/haleigh/,2024-05-14 22:28:13,2024-05-14 22:28:13
 7,1,46,Clyde J. Daines,Owner,,(385) 400-4740,,,2024-05-15 04:57:43,2024-05-15 04:57:43
 8,1,13,Britt J. Hosken,Owner,,,,,2024-05-15 04:59:33,2024-05-15 04:59:33
 9,1,21,Suzy Chapman,Assistant,,,,https://linkedin.com/in/suzy-chapman-77293878,2024-05-17 21:54:34,2024-05-17 21:54:34
@@ -88,29 +88,3 @@ id,user_id,location_id,name,title,years,phone,email,linkedin_url,created_at,upda
 87,1,84,Richard Poll,Veterinarian,24,,,https://linkedin.com/in/richard-poll-13a7a71a1,2024-05-17 21:54:34,2024-05-17 21:54:34
 88,1,117,Rachel Painter,Veterinarian,3,,,https://linkedin.com/in/rachel-painter-1b191550,2024-05-17 21:54:34,2024-05-17 21:54:34
 89,1,170,Valerie Archibald,Veterinarian,19,,,https://linkedin.com/in/valerie-archibald-11618881,2024-05-17 21:54:34,2024-05-17 21:54:34
-90,1,22,Becky Andrle,Associate Veterinarian,,,,https://linkedin.com/in/becky-andrle-23340a137,2024-05-18 06:31:19,2024-05-18 06:31:19
-91,1,9,Laura McLain,Associate Veterinarian,,,,https://linkedin.com/in/lauramclaindvm1997,2024-05-18 06:31:19,2024-05-18 06:31:19
-92,1,32,Patrick Dedow,Associate Veterinarian,,,,https://linkedin.com/in/patrick-dedow-41a96589,2024-05-18 06:31:19,2024-05-18 06:31:19
-93,1,12,Shelley Olivera,Manager,,,,https://linkedin.com/in/shelley-olivera-1757a492,2024-05-18 06:31:19,2024-05-18 06:31:19
-94,1,40,Heather Gillman,Marketing,,,,https://linkedin.com/in/heatherlgillman,2024-05-18 06:31:19,2024-05-18 06:31:19
-95,1,31,Roger Kodel,Owner,,,,https://linkedin.com/in/roger-kodel-34b4b55,2024-05-18 06:31:19,2024-05-18 06:31:19
-96,1,100,Andrea Howard,Owner,,,,https://linkedin.com/in/andrea-howard-90b27266,2024-05-18 06:31:19,2024-05-18 06:31:19
-97,1,24,Terry Shields,Owner,,,,https://linkedin.com/in/terry-shields-dvm-3317a11b,2024-05-18 06:31:19,2024-05-18 06:31:19
-98,1,75,Mark Miller,Owner,,,,https://linkedin.com/in/mark-miller-50229427,2024-05-18 06:31:19,2024-05-18 06:31:19
-99,1,182,Cassie Czerny,Owner,,,,https://linkedin.com/in/cassie-czerny-642634230,2024-05-18 06:31:19,2024-05-18 06:31:19
-100,1,76,David Benson,Owner,,,,https://linkedin.com/in/david-benson-4ba68926,2024-05-18 06:31:19,2024-05-18 06:31:19
-101,1,17,Leanne Brandt,Owner,,,,https://linkedin.com/in/leanne-brandt-65648213,2024-05-18 06:31:19,2024-05-18 06:31:19
-102,1,44,David Brinton,Owner,,,,https://linkedin.com/in/david-brinton-731497106,2024-05-18 06:31:19,2024-05-18 06:31:19
-103,1,60,Hailey Heyborne,Technician,,,,https://linkedin.com/in/hailey-heyborne-828045211,2024-05-18 06:31:19,2024-05-18 06:31:19
-104,1,54,Krista Mirci,Technician,,,,https://linkedin.com/in/krista-mirci-4008425a,2024-05-18 06:31:19,2024-05-18 06:31:19
-105,1,45,Kie Shepherd,Technician,,,,https://linkedin.com/in/kcshepherd,2024-05-18 06:31:19,2024-05-18 06:31:19
-106,1,90,Heather Cragun,Technician,,,,https://linkedin.com/in/heather-cragun-355609aa,2024-05-18 06:31:19,2024-05-18 06:31:19
-107,1,9,Alexi Karras,Technician,,,,https://linkedin.com/in/alexi-karras-6b33171aa,2024-05-18 06:31:19,2024-05-18 06:31:19
-108,1,74,Stacie Ward,Technician,,,,https://linkedin.com/in/stacie-ward-48532279,2024-05-18 06:31:19,2024-05-18 06:31:19
-109,1,80,Kathy Lindstrom,Veterinarian,,,,https://linkedin.com/in/kathy-lindstrom-217a2348,2024-05-18 06:31:19,2024-05-18 06:31:19
-110,1,24,Emily Gidcumb,Veterinarian,,,,https://linkedin.com/in/emilygidcumb,2024-05-18 06:31:19,2024-05-18 06:31:19
-111,1,153,Shylee Rydalch,Veterinarian,,,,https://linkedin.com/in/shylee-rydalch-4a5806155,2024-05-18 06:31:19,2024-05-18 06:31:19
-112,1,43,Elizabeth Park,Veterinarian,,,,https://linkedin.com/in/elizabeth-park-269b2a154,2024-05-18 06:31:19,2024-05-18 06:31:19
-113,1,158,Kirsten Doub,Veterinarian,,,,https://linkedin.com/in/kirsten-doub-63b08435,2024-05-18 06:31:19,2024-05-18 06:31:19
-114,1,21,Mary Patrias,Veterinarian,,,,https://linkedin.com/in/marymargaretduffy,2024-05-18 06:31:19,2024-05-18 06:31:19
-115,1,110,Carine L.,Veterinary Dermatologist,,,,https://linkedin.com/in/carine-laporte,2024-05-18 06:31:19,2024-05-18 06:31:19
